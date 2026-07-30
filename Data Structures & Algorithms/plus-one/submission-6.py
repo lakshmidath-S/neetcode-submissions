@@ -1,0 +1,14 @@
+class Solution:
+    def plusOne(self, digits: List[int]) -> List[int]:
+        carry=1
+        for i in range(len(digits)-1,-1,-1):
+            total=digits[i]+carry
+            if total>9:
+                carry=1
+                digits[i]=total-10
+            else:
+                carry=0
+                digits[i]=total
+                return digits
+        if carry==1:
+            return [1]+digits
